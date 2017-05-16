@@ -1,6 +1,9 @@
 <?php
-$_SESSION["saludo"]="Hola Mundo";
+/*$_SESSION["saludo"]="Hola Mundo";
+phpinfo()*/
 ?>
+
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
