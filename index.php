@@ -1,6 +1,5 @@
 <?php
-/*$_SESSION["saludo"]="Hola Mundo";
-phpinfo()*/
+session_start();
 ?>
 
 
@@ -16,6 +15,22 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <a href="revision.php"> Revision&oacute;n sesi&oacute;</a>
+        <div><?php if(isset($_SESSION['USR'])) { ?>
+            <a href="cerrar.php">Cerrar Sesion</a>
+            <?php } ?>
+        </div>
+        <a href="revision.php"> Revisi&oacute;n sesi&oacute;</a>
+        <?php if (!isset($_SESSION['USR'])){?>
+        <form action="revision.php" method="post">
+            <div><label>Usuario</label><input type="text" name="nombre"></div>
+            <div><label>Clave</label><input type="password" name="clave"></div>
+            <div><input type="submit" value="Acceder">
+        </form>
+        <?php } ?>
+        <h1>Ejemplos de encriptacion con el HASH MD5</h1>
+        <?php
+        echo md5('$holamundo');
+        echo '<br>';
+        ?>
     </body>
 </html>
